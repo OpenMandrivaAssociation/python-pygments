@@ -2,7 +2,7 @@
 Name:           python-pygments
 Version:        0.9
 Release:        %mkrel 1
-Summary:        Pygments is a syntax highlighting package written in Python.
+Summary:        Pygments is a syntax highlighting package written in Python
 Group:          Development/Python
 License:        BSD
 URL:            http://pygments.org/
