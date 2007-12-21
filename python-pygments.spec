@@ -7,6 +7,7 @@ Group:          Development/Python
 License:        BSD
 URL:            http://pygments.org/
 Source0:        http://pypi.python.org/packages/source/P/%{shortname}/%{shortname}-%{version}.tar.gz
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:  python-devel
 
