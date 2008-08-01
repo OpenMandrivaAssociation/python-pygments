@@ -1,7 +1,7 @@
 %define shortname Pygments
 Name:           python-pygments
 Version:        0.9
-Release:        %mkrel 4
+Release:        %mkrel 5
 Summary:        Syntax highlighting package written in Python
 Group:          Development/Python
 License:        BSD
