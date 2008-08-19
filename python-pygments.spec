@@ -1,45 +1,46 @@
-%define shortname Pygments
+%define tarname Pygments
+%define version	0.10
+%define rel	1
+
 Name:           python-pygments
-Version:        0.9
-Release:        %mkrel 5
+Version:        %version
+Release:        %mkrel %rel
 Summary:        Syntax highlighting package written in Python
 Group:          Development/Python
 License:        BSD
 URL:            http://pygments.org/
-Source0:        http://pypi.python.org/packages/source/P/%{shortname}/%{shortname}-%{version}.tar.gz
+Source0:        http://pypi.python.org/packages/source/P/%{tarname}/%{tarname}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-
 BuildRequires:  python-devel
+BuildArch: 	noarch
 
 %description
-Pygments is a syntax highlighting package written in Python.
+Pygments is a syntax highlighting package written in Python.  It is a
+generic syntax highlighter for general use in all kinds of software
+such as forum systems, wikis or other applications that need to
+prettify source code.  Highlights are:
 
-It is a generic syntax highlighter for general use in all kinds of software
-such as forum systems, wikis or other applications that need to prettify source
-code.  Highlights are:
-
-  * a wide range of common languages and markup formats is supported
-  * special attention is paid to details, increasing quality by a fair amount
-  * support for new languages and formats are added easily
-  * a number of output formats, presently HTML, LaTeX, RTF, SVG and ANSI
-    sequences
-  * it is usable as a command-line tool and as a library
-  * ... and it highlights even Brainfuck!
+* a wide range of common languages and markup formats is supported
+* special attention is paid to details, increasing quality by a fair amount
+* support for new languages and formats are added easily
+* a number of output formats, presently HTML, LaTeX, RTF, SVG and ANSI
+  sequences
+* it is usable as a command-line tool and as a library
+* ... and it highlights even Brainf*ck!
 
 %prep
-%setup -q -n %{shortname}-%{version}
+%setup -q -n %{tarname}-%{version}
 
 %build
 %{__python} setup.py build
 
 %install
-rm -rf %{buildroot}
-%{__python} setup.py install -O1 --skip-build --root %{buildroot} --install-purelib=%py_platsitedir
+%__rm -rf %{buildroot}
+%{__python} setup.py install -O1 --skip-build --root=%{buildroot} --record=FILELIST
  
 %clean
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 
-%files
+%files -f FILELIST
 %defattr(-,root,root,-)
-%{_bindir}/pygmentize
-%{py_platsitedir}/*
+%doc AUTHORS CHANGES LICENSE TODO docs/build/*.html
