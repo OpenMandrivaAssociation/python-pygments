@@ -1,6 +1,6 @@
 %define tarname Pygments
 %define version	0.11.1
-%define rel	1
+%define rel	2
 
 Name:           python-pygments
 Version:        %version
