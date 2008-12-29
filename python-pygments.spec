@@ -11,7 +11,8 @@ License:        BSD
 URL:            http://pygments.org/
 Source0:        http://pypi.python.org/packages/source/P/%{tarname}/%{tarname}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:  python-devel
+%py_requires -d
+BuildRequires:	python-setuptools
 BuildArch: 	noarch
 
 %description
