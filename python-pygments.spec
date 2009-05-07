@@ -1,6 +1,6 @@
 %define tarname Pygments
 %define version	1.0
-%define rel	1
+%define rel	2
 
 Name:           python-pygments
 Version:        %version
@@ -37,7 +37,7 @@ prettify source code.  Highlights are:
 
 %install
 %__rm -rf %{buildroot}
-%{__python} setup.py install -O1 --skip-build --root=%{buildroot} --record=FILELIST
+%{__python} setup.py install --skip-build --root=%{buildroot} --record=FILELIST
 
 %clean
 %__rm -rf %{buildroot}
@@ -45,3 +45,4 @@ prettify source code.  Highlights are:
 %files -f FILELIST
 %defattr(-,root,root,-)
 %doc AUTHORS CHANGES LICENSE TODO docs/build/*.html
+%dir %py_puresitedir/pygments/
