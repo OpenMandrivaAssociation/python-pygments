@@ -1,6 +1,6 @@
 %define tarname Pygments
-%define version	1.0
-%define rel	2
+%define version	1.1
+%define rel	1
 
 Name:           python-pygments
 Version:        %version
@@ -9,7 +9,7 @@ Summary:        Syntax highlighting package written in Python
 Group:          Development/Python
 License:        BSD
 URL:            http://pygments.org/
-Source0:        http://pypi.python.org/packages/source/P/%{tarname}/%{tarname}-%{version}.tar.bz2
+Source0:        http://pypi.python.org/packages/source/P/%{tarname}/%{tarname}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %py_requires -d
 BuildRequires:	python-setuptools
