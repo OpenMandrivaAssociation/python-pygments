@@ -1,5 +1,5 @@
 %define tarname Pygments
-%define version	1.2.2
+%define version	1.3.1
 %define rel	1
 
 Name:           python-pygments
@@ -38,11 +38,17 @@ prettify source code.  Highlights are:
 %install
 %__rm -rf %{buildroot}
 %{__python} setup.py install --skip-build --root=%{buildroot} --record=FILELIST
+mv docs/build html
+
+%__mkdir -p %{buildroot}%{_mandir}/man1
+%__sed -i 's/\/usr\/share\/doc\/python-pygments\//\/usr\/share\/doc\/python-pygments\/html\//' docs/pygmentize.1
+%__install -m 644 docs/pygmentize.1 %{buildroot}%{_mandir}/man1
 
 %clean
 %__rm -rf %{buildroot}
 
 %files -f FILELIST
 %defattr(-,root,root,-)
-%doc AUTHORS CHANGES LICENSE TODO docs/build/*.html
+%doc AUTHORS CHANGES LICENSE TODO html/
 %dir %py_puresitedir/pygments/
+%_mandir/man1/pygmentize.*
