@@ -1,6 +1,6 @@
 %define tarname Pygments
 %define version	1.3.1
-%define rel	1
+%define rel	2
 
 Name:           python-pygments
 Version:        %version
@@ -37,7 +37,7 @@ prettify source code.  Highlights are:
 
 %install
 %__rm -rf %{buildroot}
-%{__python} setup.py install --skip-build --root=%{buildroot} --record=FILELIST
+PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --skip-build --root=%{buildroot} --record=FILELIST
 mv docs/build html
 
 %__mkdir -p %{buildroot}%{_mandir}/man1
