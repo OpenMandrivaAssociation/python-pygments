@@ -3,7 +3,7 @@
 
 Name:           python-pygments
 Version:        1.3.1
-Release:        %mkrel 3
+Release:        %mkrel 4
 Summary:        Syntax highlighting package written in Python
 Group:          Development/Python
 License:        BSD
