@@ -1,9 +1,12 @@
 %define tarname Pygments
-%define version	1.3.1
+%define module	pygments
+%define name	python-%{module}
+%define version	1.4
+%define release	%mkrel 1
 
-Name:           python-pygments
-Version:        1.3.1
-Release:        %mkrel 4
+Name:           %{name}
+Version:        %{version}
+Release:        %{release}
 Summary:        Syntax highlighting package written in Python
 Group:          Development/Python
 License:        BSD
@@ -52,3 +55,4 @@ mv docs/build html
 %doc AUTHORS CHANGES LICENSE TODO html/
 %dir %py_puresitedir/pygments/
 %_mandir/man1/pygmentize.*
+
