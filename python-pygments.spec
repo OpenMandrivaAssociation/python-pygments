@@ -1,8 +1,8 @@
 %define tarname Pygments
 %define module	pygments
 %define name	python-%{module}
-%define version	1.4
-%define release	%mkrel 2
+%define version	1.5
+%define release	%mkrel 1
 
 Name:           %{name}
 Version:        %{version}
@@ -15,7 +15,7 @@ Source0:        http://pypi.python.org/packages/source/P/%{tarname}/%{tarname}-%
 %py_requires -d
 Requires:       python-pkg-resources
 BuildRequires:	python-setuptools
-BuildArch: 	noarch
+BuildArch:		noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
