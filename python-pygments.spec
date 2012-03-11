@@ -40,7 +40,7 @@ prettify source code.  Highlights are:
 
 %install
 %__rm -rf %{buildroot}
-PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --skip-build --root=%{buildroot} --record=FILELIST
+PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --skip-build --root=%{buildroot}
 mv docs/build html
 
 %__mkdir -p %{buildroot}%{_mandir}/man1
@@ -50,9 +50,11 @@ mv docs/build html
 %clean
 %__rm -rf %{buildroot}
 
-%files -f FILELIST
+%files
 %defattr(-,root,root,-)
 %doc AUTHORS CHANGES LICENSE TODO html/
-%dir %py_puresitedir/pygments/
+%_bindir/pygmentize
+%py_sitedir/pygments/*
+%py_sitedir/Pygments-*
 %_mandir/man1/pygmentize.*
 
