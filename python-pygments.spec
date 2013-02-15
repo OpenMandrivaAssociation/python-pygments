@@ -1,8 +1,8 @@
 %define tarname Pygments
 %define module	pygments
 %define name	python-%{module}
-%define version	1.5
-%define release	%mkrel 1
+%define version	1.6
+%define release	1
 
 Name:           %{name}
 Version:        %{version}
