@@ -1,12 +1,9 @@
 %define tarname Pygments
 %define module	pygments
-%define name	python-%{module}
-%define version	1.6
-%define release	1
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
+Name:           python-%{module}
+Version:        1.6
+Release:        1
 Summary:        Syntax highlighting package written in Python
 Group:          Development/Python
 License:        BSD
@@ -16,7 +13,6 @@ Source0:        http://pypi.python.org/packages/source/P/%{tarname}/%{tarname}-%
 Requires:       python-pkg-resources
 BuildRequires:	python-setuptools
 BuildArch:		noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Pygments is a syntax highlighting package written in Python.  It is a
@@ -39,7 +35,6 @@ prettify source code.  Highlights are:
 %{__python} setup.py build
 
 %install
-%__rm -rf %{buildroot}
 PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --skip-build --root=%{buildroot}
 mv docs/build html
 
@@ -47,11 +42,7 @@ mv docs/build html
 %__sed -i 's/\/usr\/share\/doc\/python-pygments\//\/usr\/share\/doc\/python-pygments\/html\//' docs/pygmentize.1
 %__install -m 644 docs/pygmentize.1 %{buildroot}%{_mandir}/man1
 
-%clean
-%__rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root,-)
 %doc AUTHORS CHANGES LICENSE TODO html/
 %_bindir/pygmentize
 %py_sitedir/pygments/*
