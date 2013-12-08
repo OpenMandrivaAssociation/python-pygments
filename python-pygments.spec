@@ -11,7 +11,7 @@ Url:		http://pygments.org/
 Source0:	http://pypi.python.org/packages/source/P/%{tarname}/%{tarname}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-setuptools
-%py_requires -d
+BuildRequires:  python-devel
 Requires:	python-pkg-resources
 
 %description
