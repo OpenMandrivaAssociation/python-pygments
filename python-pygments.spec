@@ -3,7 +3,7 @@
 
 Name:           python-%{module}
 Version:        1.6
-Release:        1
+Release:        2
 Summary:        Syntax highlighting package written in Python
 Group:          Development/Python
 License:        BSD
