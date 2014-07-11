@@ -6,7 +6,7 @@
 Summary:	Syntax highlighting package written in Python
 Name:		python-%{module}
 Version:	1.6
-Release:	7
+Release:	8
 Group:		Development/Python
 License:	BSD
 Url:		http://pygments.org/
