@@ -1,3 +1,4 @@
-sources:
+removed_sources:
   Pygments-1.6.tar.gz: 53d831b83b1e4d4f16fec604057e70519f9f02fb
-
+sources:
+  Pygments-2.0.1.tar.gz: b9e9236693ccf6e86414e8578bf8874181f409de

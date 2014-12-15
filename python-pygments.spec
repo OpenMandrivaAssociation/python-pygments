@@ -5,12 +5,12 @@
 
 Summary:	Syntax highlighting package written in Python
 Name:		python-%{module}
-Version:	1.6
-Release:	9
+Version:	2.0.1
+Release:	1
 Group:		Development/Python
 License:	BSD
 Url:		http://pygments.org/
-Source0:	http://pypi.python.org/packages/source/P/%{tarname}/%{tarname}-%{version}.tar.gz
+Source0:	http://pypi.python.org/packages/source/P/Pygments/Pygments-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-distribute
 BuildRequires:  pkgconfig(python3)
@@ -49,7 +49,7 @@ cp -a `ls |grep -v python2` python2/
 %endif
 
 %build
-%{__python} setup.py build
+python setup.py build
 
 %if %{with python2}
 cd python2
@@ -64,7 +64,7 @@ PYTHONDONTWRITEBYTECODE=yes python2 setup.py install --skip-build --root=%{build
 cd ..
 %endif
 
-PYTHONDONTWRITEBYTECODE=yes %{__python} setup.py install --skip-build --root=%{buildroot}
+PYTHONDONTWRITEBYTECODE=yes python setup.py install --skip-build --root=%{buildroot}
 mv docs/build html
 
 mkdir -p %{buildroot}%{_mandir}/man1
@@ -74,8 +74,8 @@ install -m 644 docs/pygmentize.1 %{buildroot}%{_mandir}/man1
 %files
 %doc AUTHORS CHANGES LICENSE TODO html/
 %{_bindir}/pygmentize
-%{py_sitedir}/pygments
-%{py_sitedir}/Pygments-*
+%{py_puresitedir}/pygments
+%{py_puresitedir}/Pygments-*
 %{_mandir}/man1/pygmentize.*
 
 %if %{with python2}
