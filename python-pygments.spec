@@ -5,8 +5,8 @@
 
 Summary:	Syntax highlighting package written in Python
 Name:		python-%{module}
-Version:	1.6
-Release:	10
+Version:	2.1.3
+Release:	1
 Group:		Development/Python
 License:	BSD
 Url:		http://pygments.org/
@@ -65,14 +65,12 @@ cd ..
 %endif
 
 PYTHONDONTWRITEBYTECODE=yes %{__python} setup.py install --skip-build --root=%{buildroot}
-mv docs/build html
 
 mkdir -p %{buildroot}%{_mandir}/man1
-sed -i 's/\/usr\/share\/doc\/python-pygments\//\/usr\/share\/doc\/python-pygments\/html\//' docs/pygmentize.1
-install -m 644 docs/pygmentize.1 %{buildroot}%{_mandir}/man1
+install -m 644 doc/pygmentize.1 %{buildroot}%{_mandir}/man1
 
 %files
-%doc AUTHORS CHANGES LICENSE TODO html/
+%doc AUTHORS CHANGES LICENSE TODO
 %{_bindir}/pygmentize
 %{py_sitedir}/pygments
 %{py_sitedir}/Pygments-*
