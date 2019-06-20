@@ -5,12 +5,12 @@
 
 Summary:	Syntax highlighting package written in Python
 Name:		python-%{module}
-Version:	2.2.0
-Release:	4
+Version:	2.4.2
+Release:	1
 Group:		Development/Python
 License:	BSD
 Url:		http://pygments.org/
-Source0:	https://pypi.python.org/packages/71/2a/2e4e77803a8bd6408a2903340ac498cb0a2181811af7c9ec92cb70b0308a/Pygments-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/7e/ae/26808275fc76bf2832deb10d3a3ed3107bc4de01b85dcccbe525f2cd6d1e/Pygments-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-distribute
 BuildRequires:  pkgconfig(python3)
