@@ -5,12 +5,12 @@
 
 Summary:	Syntax highlighting package written in Python
 Name:		python-%{module}
-Version:	2.4.2
+Version:	2.5.2
 Release:	1
 Group:		Development/Python
 License:	BSD
 Url:		http://pygments.org/
-Source0:	https://files.pythonhosted.org/packages/7e/ae/26808275fc76bf2832deb10d3a3ed3107bc4de01b85dcccbe525f2cd6d1e/Pygments-%{version}.tar.gz
+Source0:	https://github.com/pygments/pygments/archive/%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-distribute
 BuildRequires:  pkgconfig(python3)
@@ -42,7 +42,7 @@ Requires:	python2-pkg-resources
 Pygments syntax highlighter for Python 2.x
 
 %prep
-%setup -qn %{tarname}-%{version}
+%autosetup -p1 -n pygments-%{version}
 %if %{with python2}
 mkdir python2
 cp -a `ls |grep -v python2` python2/
@@ -70,7 +70,7 @@ mkdir -p %{buildroot}%{_mandir}/man1
 install -m 644 doc/pygmentize.1 %{buildroot}%{_mandir}/man1
 
 %files
-%doc AUTHORS CHANGES LICENSE TODO
+%doc AUTHORS CHANGES LICENSE
 %{_bindir}/pygmentize
 %{py_sitedir}/pygments
 %{py_sitedir}/Pygments-*
