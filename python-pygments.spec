@@ -5,18 +5,18 @@
 
 Summary:	Syntax highlighting package written in Python
 Name:		python-%{module}
-Version:	2.6.1
+Version:	2.7.1
 Release:	1
 Group:		Development/Python
 License:	BSD
 Url:		http://pygments.org/
 Source0:	https://github.com/pygments/pygments/archive/%{version}.tar.gz
 BuildArch:	noarch
-BuildRequires:	python-distribute
+BuildRequires:	python-setuptools
 BuildRequires:  pkgconfig(python3)
 %if %{with python2}
 BuildRequires:	pkgconfig(python2)
-BuildRequires:	python2-distribute
+BuildRequires:	python2-setuptools
 %endif
 
 %description
