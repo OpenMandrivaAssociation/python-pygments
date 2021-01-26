@@ -5,7 +5,7 @@
 
 Summary:	Syntax highlighting package written in Python
 Name:		python-%{module}
-Version:	2.7.2
+Version:	2.7.4
 Release:	1
 Group:		Development/Python
 License:	BSD
