@@ -1,12 +1,12 @@
 %define tarname Pygments
 %define module	pygments
 
-%bcond_without python2
+%bcond_with python2
 
 Summary:	Syntax highlighting package written in Python
 Name:		python-%{module}
 Version:	2.11.2
-Release:	1
+Release:	2
 Group:		Development/Python
 License:	BSD
 Url:		http://pygments.org/
