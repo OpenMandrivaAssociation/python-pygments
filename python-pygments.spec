@@ -3,7 +3,7 @@
 
 Summary:	Syntax highlighting package written in Python
 Name:		python-%{module}
-Version:	2.13.0
+Version:	2.14.0
 Release:	1
 Group:		Development/Python
 License:	BSD
