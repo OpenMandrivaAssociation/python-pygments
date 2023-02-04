@@ -12,6 +12,8 @@ Source0:	https://github.com/pygments/pygments/archive/%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-setuptools
 BuildRequires:  pkgconfig(python3)
+BuildRequires: python3dist(pip)
+BuildRequires: python3dist(wheel)
 
 %description
 Pygments is a syntax highlighting package written in Python.  It is a
