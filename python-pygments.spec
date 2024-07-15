@@ -3,7 +3,7 @@
 
 Summary:	Syntax highlighting package written in Python
 Name:		python-%{module}
-Version:	2.16.1
+Version:	2.18.0
 Release:	1
 Group:		Development/Python
 License:	BSD
@@ -12,8 +12,9 @@ Source0:	https://github.com/pygments/pygments/archive/%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	python-setuptools
 BuildRequires:  pkgconfig(python3)
-BuildRequires: python3dist(pip)
-BuildRequires: python3dist(wheel)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(wheel)
+BuildSystem:	python
 
 %description
 Pygments is a syntax highlighting package written in Python.  It is a
@@ -29,15 +30,7 @@ prettify source code.  Highlights are:
 * it is usable as a command-line tool and as a library
 * ... and it highlights even Brainf*ck!
 
-%prep
-%autosetup -p1 -n pygments-%{version}
-
-%build
-%py_build
-
-%install
-%py_install
-
+%install -a
 mkdir -p %{buildroot}%{_mandir}/man1
 install -m 644 doc/pygmentize.1 %{buildroot}%{_mandir}/man1
 
@@ -45,5 +38,5 @@ install -m 644 doc/pygmentize.1 %{buildroot}%{_mandir}/man1
 %doc AUTHORS CHANGES LICENSE
 %{_bindir}/pygmentize
 %{py_sitedir}/pygments
-%{py_sitedir}/Pygments-*
+%{py_sitedir}/pygments*.*-info
 %{_mandir}/man1/pygmentize.*
