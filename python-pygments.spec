@@ -10,10 +10,11 @@ License:	BSD
 Url:		http://pygments.org/
 Source0:	https://github.com/pygments/pygments/archive/%{version}.tar.gz
 BuildArch:	noarch
-BuildRequires:	python-setuptools
 BuildRequires:  pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(wheel)
+BuildRequires:	python%{pyver}dist(hatchling)
 BuildSystem:	python
 
 %description
