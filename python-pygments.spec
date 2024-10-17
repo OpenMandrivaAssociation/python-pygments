@@ -7,7 +7,7 @@ Version:	2.18.0
 Release:	1
 Group:		Development/Python
 License:	BSD
-Url:		http://pygments.org/
+Url:		https://pygments.org/
 Source0:	https://github.com/pygments/pygments/archive/%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:  pkgconfig(python3)
