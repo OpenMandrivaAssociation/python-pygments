@@ -3,12 +3,12 @@
 
 Summary:	Syntax highlighting package written in Python
 Name:		python-%{module}
-Version:	2.19.1
+Version:	2.19.2
 Release:	1
 Group:		Development/Python
 License:	BSD
 Url:		https://pygments.org/
-Source0:	https://github.com/pygments/pygments/archive/%{version}.tar.gz
+Source0:	https://github.com/pygments/pygments/archive/%{module}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:  pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(pip)
